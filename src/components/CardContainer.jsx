@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CardDetail from "./CardDetail";
+import ShimmerEffect from "./ShimmerEffect";
+const apiEndpoint = import.meta.env.VITE_API_URL;
 
 function CardContainer() {
   const [redditData, setRedditData] = useState(null);
@@ -12,7 +14,7 @@ function CardContainer() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("https://www.reddit.com/r/reactjs.json");
+      const response = await fetch(apiEndpoint);
       if (!response.ok) {
         throw new Error("Failed to fetch data");
       }
@@ -29,7 +31,7 @@ function CardContainer() {
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (isLoading) {
-      return <div>Loading...</div>;
+      return <ShimmerEffect />; // Render shimmer effect instead of "Loading..."
     } else {
       return renderRedditData();
     }

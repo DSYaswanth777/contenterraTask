@@ -4,4 +4,43 @@
   padding: 0;
 }
 
+.shimmer-wrapper {
+  margin-bottom: 20px; /* Add margin for spacing */
+}
+
+.shimmer {
+  height: 20px; /* Adjust height as needed */
+  background: linear-gradient(to right, transparent 0%, #f0f0f0 50%, transparent 100%);
+  animation: shimmerAnimation 1s infinite linear;
+}
+
+.shimmer-title {
+  width: 70%; /* Adjust width for the title */
+}
+
+.shimmer-description {
+  height: 60px; /* Adjust height for the description */
+  margin-top: 10px; /* Add margin-top for spacing */
+}
+
+.shimmer-url {
+  width: 50%; /* Adjust width for the URL */
+  height: 20px; /* Adjust height for the URL */
+  margin-top: 10px; /* Add margin-top for spacing */
+}
+
+.shimmer-score {
+  width: 30%; /* Adjust width for the score */
+  height: 20px; /* Adjust height for the score */
+  margin-top: 10px; /* Add margin-top for spacing */
+}
+
+@keyframes shimmerAnimation {
+  0% {
+    background-position: -100px;
+  }
+  100% {
+    background-position: 200px;
+  }
+}
 
